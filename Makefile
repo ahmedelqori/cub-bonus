@@ -61,6 +61,7 @@ SRC_BONUS = ./src_bonus/main_bonus.c \
 	./src_bonus/execution/draw_images_bonus.c \
 	./src_bonus/execution/ray_hit_the_wall_bonus.c \
 	./src_bonus/execution/handle_mouse_bonus.c\
+	./src_bonus/execution/draw_mini_map_bonus.c\
 	./src_bonus/parsing/ft_normalize_map_bonus.c \
 	./src_bonus/parsing/ft_verify_map_bonus.c \
 	./src_bonus/parsing/ft_utils_bonus.c \

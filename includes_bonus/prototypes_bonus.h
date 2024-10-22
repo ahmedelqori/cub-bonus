@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:05 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/22 21:47:59 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/22 22:56:17 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ void			check_hit(t_container *container);
 
 int				handle_mouse(int x, int y, t_container *container);
 void			camera_left_right(t_container *container, float flag);
-
+void			draw_mini_map(t_container *container);
 #endif
