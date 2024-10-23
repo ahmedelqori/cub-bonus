@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:05 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 12:42:16 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:55:14 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char			*ft_substr(char *str);
 char			*ft_strjoin(char *s1, char *s2);
 char			**ft_split_2(char *string);
 int				is_num(char *line);
+int 			is_door(char c);
+t_door 			*ft_new_door(char i, int j, int c);
 
 // ======================= EXECUTION ======================= //
 

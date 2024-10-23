@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:54 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 13:43:11 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:15:25 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include "cub_bonus.h"
 
 // ================ PARSING PART ================ //
+
+typedef struct s_door
+{
+	char			door_status;
+	int				door_y;
+	int				door_x;
+}	t_door;
 
 typedef struct s_parsing
 {
@@ -29,6 +36,7 @@ typedef struct s_parsing
 	int				map_x;
 	int				map_y;
 	char			direction;
+	t_list			*door;
 }	t_parsing;
 
 // ================ EXECUTION PART ================ //

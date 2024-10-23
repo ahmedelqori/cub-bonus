@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_verify_map_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:28 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:20 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:56:02 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,14 @@ int	ft_verify_top_bot_line(char *line)
 int	ft_verify_regular_line(char **line, int i, t_parsing *data,
 		t_parsing_helper *helper)
 {
-	int	j;
+	int		j;
+	t_door 	*door;
 
 	j = 0;
+	data->door = NULL;
 	while (line[i][j])
 	{
-		if (!ft_check_entity(line[i][j]) || (is_empty_space(line[i][j])
+		if (!ft_check_entity(line[i][j]) || ((is_empty_space(line[i][j]) || is_door(line[i][j]))
 				&& !flood_fill_neighbor(line, i, j)))
 			return (0);
 		if (is_orientation(line[i][j]))
@@ -61,6 +63,11 @@ int	ft_verify_regular_line(char **line, int i, t_parsing *data,
 			data->direction = line[i][j];
 			data->map_y = i;
 			data->map_x = j;
+		}
+		else if (is_door(line[i][j]))
+		{
+			door = ft_new_door(line[i][j], j, i);
+			ft_lstadd_back(&data->door, ft_lstnew(door));
 		}
 		j++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_normalize_map_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:13 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:20 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:55:02 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,15 @@ int	ft_normalize_map(t_parsing *data)
 		i++;
 	}
 	return (1);
+}
+
+t_door *ft_new_door(char i, int j, int c)
+{
+	t_door *door;
+
+	door = malloc(sizeof(t_door));
+	door->door_status = i;
+	door->door_x = j;
+	door->door_y = c;
+	return door;
 }

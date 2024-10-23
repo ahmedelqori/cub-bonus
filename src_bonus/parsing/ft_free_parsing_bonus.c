@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_parsing_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:08 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:20 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:56:08 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	ft_free_parsing(t_parsing *data)
 	free(data->south);
 	free(data->west);
 	free(data->east);
+	ft_lstclear(&data->door ,free);
 }

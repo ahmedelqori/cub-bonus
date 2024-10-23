@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:18 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:20 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 15:27:43 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	is_empty_space(char c)
 
 int	ft_check_entity(char c)
 {
-	if (!is_empty_space(c) && !is_orientation(c) && !is_space(c) && !is_wall(c))
+	if (!is_empty_space(c) && !is_orientation(c) && !is_space(c) && !is_wall(c) && !is_door(c))
 		return (0);
 	return (1);
 }
