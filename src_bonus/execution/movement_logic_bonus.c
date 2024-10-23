@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:10:19 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/22 22:29:38 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:17:34 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ static void	forward_backward(t_container *container, char flag, float distance)
 	element = container->data->map[(int)(container->player.pos.vert \
 	+ container->player.pln.horz * distance)]
 	[(int)(container->player.pos.horz)];
-	if (element != WALL && flag == UP)
+	if (element != WALL && element != LOCK && flag == UP)
 		container->player.pos.vert -= container->player.pln.horz * MOVE_SPEED;
-	if (element != WALL && flag == DOWN)
+	if (element != WALL && element != LOCK && flag == DOWN)
 		container->player.pos.vert += container->player.pln.horz * MOVE_SPEED;
 	element = container->data->map[(int)(container->player.pos.vert)]
 	[(int)(container->player.pos.horz - container->player.pln.vert * distance)];
-	if (element != WALL && flag == UP)
+	if (element != WALL && element != LOCK && flag == UP)
 		container->player.pos.horz += container->player.pln.vert * MOVE_SPEED;
-	if (element != WALL && flag == DOWN)
+	if (element != WALL && element != LOCK && flag == DOWN)
 		container->player.pos.horz -= container->player.pln.vert * MOVE_SPEED;
 }
 
@@ -75,15 +75,15 @@ static void	right_left(t_container *container, char flag, float distance)
 	element = container->data->map[(int)(container->player.pos.vert \
 	+ container->player.dir.horz * distance)]
 	[(int)(container->player.pos.horz)];
-	if (element != WALL && flag == RIGHT)
+	if (element != WALL && element != LOCK && flag == RIGHT)
 		container->player.pos.vert += container->player.dir.horz * MOVE_SPEED;
-	if (element != WALL && flag == LEFT)
+	if (element != WALL && element != LOCK && flag == LEFT)
 		container->player.pos.vert -= container->player.dir.horz * MOVE_SPEED;
 	element = container->data->map[(int)(container->player.pos.vert)]
 	[(int)(container->player.pos.horz - container->player.dir.vert * distance)];
-	if (element != WALL && flag == RIGHT)
+	if (element != WALL && element != LOCK && flag == RIGHT)
 		container->player.pos.horz -= container->player.dir.vert * MOVE_SPEED;
-	if (element != WALL && flag == LEFT)
+	if (element != WALL && element != LOCK && flag == LEFT)
 		container->player.pos.horz += container->player.dir.vert * MOVE_SPEED;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:16:18 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/22 22:06:32 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:16:32 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@
 # define CAMERA_RIGHT 'R'
 # define WALL '1'
 # define MOUSE 'M'
-
+# define LOCK 'C'
 // ================== ERRORS =============
 
 # define ALLOC_CONTAINER "Failed Allocation of container"

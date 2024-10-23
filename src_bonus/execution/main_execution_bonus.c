@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:48:48 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:08:39 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:22:59 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_execute(t_parsing *parsing)
 	if (container == NULL)
 		safe_exit(parsing, 1, ALLOC_CONTAINER);
 	container->data = parsing;
-	container->data->map[5][26] = 'D';
+	container->data->map[5][26] = 'C';
 	init_mlx(container);
 	initialize_to_zero(container);
 	initialize_defaults(container);

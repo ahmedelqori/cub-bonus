@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:06:34 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 08:55:05 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:22:51 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	check_hit(t_container *container)
 		[container->player.mapx] == '1')
 			container->player.hit = 1;
 		else if (container->data->map[container->player.mapy] \
-		[container->player.mapx] == 'D')
+		[container->player.mapx] == 'C')
 			container->player.hit = 3;
 	}
 }
