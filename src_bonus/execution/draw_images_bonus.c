@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 03:53:38 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 14:07:10 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:26:38 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,6 @@ void	draw_pixels_to_screen(t_container *container, int x, int y)
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
 			img_px(container->bundles.walls.orientations[1],
 				container->bundles.walls.texx, container->bundles.walls.texy));
+	if (x == SCREEN_WIDTH / 2 && y == SCREEN_HEIGHT / 2)
+		paint_on_screen_by_pixel(&container->bundles.background, x, y, 0xFFFFFF);
 }
