@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:14:16 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 11:01:27 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:03:45 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include "../libft/libft.h"
-// # include <mlx.h>
 # include "../minilibx/mlx.h"
 # include "sys/time.h"
 # include <unistd.h>

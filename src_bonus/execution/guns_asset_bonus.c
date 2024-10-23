@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:18:04 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 11:03:12 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:02:36 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	draw_gun_to_window(t_container *container, t_texturedata *gun)
 			color = *(int *)(gun->addr + px);
 			if (color != 0xFF000000)
 				mlx_pixel_put(container->mlx, \
-				container->win, x + gun->start_horz, y + gun->start_vert , color);	
+				container->win, x + gun->start_horz + 100, y + gun->start_vert + 10 , color);	
 			x++;
 		}
 		y++;
