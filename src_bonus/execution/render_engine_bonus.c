@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:39:31 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 10:09:09 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 10:38:58 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	update_render(t_container *container)
 	digital_differential_analysis(container);
 	handle_movement(container);
 	draw_mini_map(container);
-	draw_xpm_image_with_transparency(container);
+	draw_gun_to_window(container, &container->bundles.walls.gun);
 	long frame_end_time = get_time_in_ms();
     long frame_duration = frame_end_time - frame_start_time;
 
@@ -38,24 +38,4 @@ int	update_render(t_container *container)
         usleep((FRAME_TIME_MS - frame_duration) * 1000); 
     }
 	return (SUCCESS);
-}
-
-void draw_xpm_image_with_transparency(t_container *container)
-{
-	int start_horz = SCREEN_WIDTH / 2 - (container->bundles.walls.gun.width / 2);
-	int start_vert = SCREEN_HEIGHT / 2 - (container->bundles.walls.gun.height / 2) + 250;
-	
-    for (int y = 0; y < container->bundles.walls.gun.height; y++)
-    {
-        for (int x = container->bundles.walls.gun.width/ 2; x < container->bundles.walls.gun.width; x++)
-        {
-            int pixel_index = (y * container->bundles.walls.gun.line_length) + (x * (container->bundles.walls.gun.bits_per_pixel / 8));
-            unsigned int color = *(int *)(container->bundles.walls.gun.addr + pixel_index);
-
-            if (color == 0xFF000000) 
-                continue; 
-
-            mlx_pixel_put(container->mlx, container->win, x + start_horz, y + start_vert , color);
-        }
-    }
 }

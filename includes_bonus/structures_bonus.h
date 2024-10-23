@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:54 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:42:55 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 10:24:00 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ typedef struct s_texturedata
 	int		endian;
 	int		width;
 	int		height;
+	int		start_horz;
+	int		start_vert;
 }	t_texturedata;
 
 typedef struct s_wallproperties
