@@ -9,7 +9,7 @@ CC = cc
 NAME = cub3D
 NAME_BONUS = cub3D_bonus
 
-CFLAGS = -Wall -Wextra  -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra  -Werror -Ofast #-fsanitize=address -g
 
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
@@ -105,13 +105,13 @@ $(MLX):
 	@echo "$(GREEN)\t\t✓ mlx$(RESET)"
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -Iminilibx-linux -O3 -c $< -o $@
+	@$(CC) $(CFLAGS) -Iminilibx-linux  -c $< -o $@
 
 bonus: $(MLX) $(LIBFT) $(NAME_BONUS)
 	@echo -n;
 
 $(NAME_BONUS): $(OBJ_BONUS) $(LIB_bonus)
-	@$(CC) $(CFLAGS) $(OBJ_BONUS) -Lminilibx-linux -lmlx -lXext -lX11 -lm -O3 $(LIBFT) $(MLX) -o $(NAME_BONUS)
+	@$(CC) $(CFLAGS) $(OBJ_BONUS) -Lminilibx-linux -lmlx -lXext -lX11 -lm  $(LIBFT) $(MLX) -o $(NAME_BONUS)
 	@echo "$(GREEN)\t\t✓ $(NAME_BONUS)$(RESET)"
 	@echo "$(MAGENTA)Usage:\n\t$(YELLOW)./cub3D_bonus map.cub$(RESET)"
 

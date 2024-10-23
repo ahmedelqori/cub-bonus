@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 03:53:38 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 11:02:45 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:07:10 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,19 @@ void	draw_pixels_to_screen(t_container *container, int x, int y)
 {
 	if (container->player.hit == 3) // Fix this
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
-			img_px(container->bundles.walls.door,
+			img_px(container->bundles.walls.door[0],
 				container->bundles.walls.texx, container->bundles.walls.texy));
+	else if (container->player.open == TRUE  && container->player.hit == 4 )
+	{
+		int px = img_px(container->bundles.walls.door[1],
+				container->bundles.walls.texx, container->bundles.walls.texy);
+		if (px != (int)0xFF000000)
+			paint_on_screen_by_pixel(&container->bundles.background, x, y,px);
+		else
+			paint_on_screen_by_pixel(&container->bundles.background, x, y,
+				img_px(container->bundles.walls.door[0],
+					container->bundles.walls.texx, container->bundles.walls.texy));
+	}
 	else if (container->player.side == 0 && container->player.ray.horz > 0)
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
 			img_px(container->bundles.walls.orientations[2],

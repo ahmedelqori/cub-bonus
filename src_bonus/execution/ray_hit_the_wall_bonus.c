@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:06:34 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:22:51 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:51:59 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static int	get_size_of_matrix(char **str);
 
 void	check_hit(t_container *container)
 {
+	container->player.open = FALSE;
 	while (container->player.hit == 0)
 	{
 		if (container->player.sidedist.horz < container->player.sidedist.vert)
@@ -42,6 +43,12 @@ void	check_hit(t_container *container)
 		else if (container->data->map[container->player.mapy] \
 		[container->player.mapx] == 'C')
 			container->player.hit = 3;
+		else if (container->data->map[container->player.mapy] \
+		[container->player.mapx] == 'O')
+		{
+			container->player.hit = 4;
+			container->player.open = TRUE;
+		}
 	}
 }
 

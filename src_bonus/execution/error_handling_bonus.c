@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:54:51 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 10:04:25 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:34:59 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int	terminate_with_cleanup(int key, t_container *container)
 	mlx_destroy_image(container->mlx, \
 	container->bundles.walls.orientations[3].img);
 	mlx_destroy_image(container->mlx, \
-			container->bundles.walls.door.img);
+			container->bundles.walls.door[0].img);
+	mlx_destroy_image(container->mlx, \
+			container->bundles.walls.door[1].img);
 	mlx_destroy_image(container->mlx, \
 			container->bundles.walls.gun.img);
 	mlx_destroy_image(container->mlx, container->bundles.background.img);
@@ -58,9 +60,12 @@ int	mouse_hook(t_container *container)
 	if (container->bundles.walls.orientations[3].img)
 		mlx_destroy_image(container->mlx, \
 			container->bundles.walls.orientations[3].img);
-	if (container->bundles.walls.door.img)
+	if (container->bundles.walls.door[0].img)
 		mlx_destroy_image(container->mlx, \
-			container->bundles.walls.door.img);
+			container->bundles.walls.door[0].img);
+	if (container->bundles.walls.door[1].img)
+		mlx_destroy_image(container->mlx, \
+			container->bundles.walls.door[1].img);
 	if (container->bundles.walls.gun.img)
 		mlx_destroy_image(container->mlx, \
 			container->bundles.walls.gun.img);

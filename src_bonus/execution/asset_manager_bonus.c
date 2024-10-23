@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 18:07:00 by meedivo           #+#    #+#             */
-/*   Updated: 2024/10/23 11:02:27 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:50:23 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,19 @@ void	initialize_images(t_container *container)
 	container->bundles.background.img = mlx_new_image(container->mlx, \
 	SCREEN_WIDTH, SCREEN_HEIGHT);
 	get_data_from_textures(&container->bundles.background);
-	while (++index < 5)
+	while (++index < 6)
 		converte_img_to_xpm(container, array_of_images(container, index), \
 		array_of_textures(container, index));
 	index = -1;
 	if (!container->bundles.walls.orientations[0].img || \
 	!container->bundles.walls.orientations[1].img || \
 	!container->bundles.walls.orientations[2].img \
-	|| !container->bundles.walls.orientations[3].img \
 	|| !container->bundles.walls.orientations[3].img)
 	{
 		printf(ERROR_TEXTURES);
 		mouse_hook(container);
 	}
-	while (++index < 5)
+	while (++index < 6)
 		get_data_from_textures(array_of_images(container, index));
 }
 
@@ -56,17 +55,17 @@ static void	converte_img_to_xpm(t_container *cub, t_texturedata *img, char *txt)
 
 static t_texturedata	*array_of_images(t_container *cub, int index)
 {
-	const t_texturedata	*array[5] = {&cub->bundles.walls.orientations[0], \
+	const t_texturedata	*array[6] = {&cub->bundles.walls.orientations[0], \
 	&cub->bundles.walls.orientations[1], &cub->bundles.walls.orientations[2], \
-	&cub->bundles.walls.orientations[3], &cub->bundles.walls.door};
+	&cub->bundles.walls.orientations[3], &cub->bundles.walls.door[0], &cub->bundles.walls.door[1]};
 
 	return ((t_texturedata *)array[index]);
 }
 
 static char	*array_of_textures(t_container *cub, int index)
 {
-	const char	*array[5] = {cub->data->north, cub->data->south, \
-	cub->data->east, cub->data->west, "./images/d_bonus.xpm"}; // Fix this
+	const char	*array[6] = {cub->data->north, cub->data->south, \
+	cub->data->east, cub->data->west, "./images/door_close.xpm" , "./images/door_open.xpm"}; // Fix this
 
 	return ((char *)array[index]);
 }

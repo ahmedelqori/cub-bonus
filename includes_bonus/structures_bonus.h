@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:54 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 12:54:25 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:43:11 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_playerentity
 	int			side;
 	int			stepy;
 	int			stepx;
+	int			open;
 	double		camerax;
 	double		perpwalldist;
 	t_vector	dir;
@@ -97,7 +98,7 @@ typedef struct s_wallproperties
 	int				texx;
 	double			texy;
 	t_texturedata	orientations[6];
-	t_texturedata	door;
+	t_texturedata	door[2];
 	t_texturedata	gun;
 }	t_wallproperties;
 
