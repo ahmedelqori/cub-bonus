@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:23:30 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:25:02 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:03:04 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 
-void	open_or_close_doors(t_container *container)
+void	open_or_close_doors(t_container *container) // Fix this
 {
 	
 }

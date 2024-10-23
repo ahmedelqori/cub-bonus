@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 03:53:38 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:22:45 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:02:45 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	paint_on_screen_by_pixel(t_texturedata *img, int x, int y, int color)
 
 void	draw_pixels_to_screen(t_container *container, int x, int y)
 {
-	if (container->player.hit == 3)
+	if (container->player.hit == 3) // Fix this
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
 			img_px(container->bundles.walls.door,
 				container->bundles.walls.texx, container->bundles.walls.texy));

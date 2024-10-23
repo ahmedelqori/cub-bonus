@@ -6,11 +6,11 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 22:51:58 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/22 23:09:44 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:02:53 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes_bonus/cub_bonus.h"
+#include "../../includes_bonus/cub_bonus.h" // fix this
 void	draw_square(t_container *container, int start_x, int start_y, int size);
 void	draw_mini_map(t_container *container)
 {

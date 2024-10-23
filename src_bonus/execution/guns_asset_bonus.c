@@ -6,13 +6,13 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:18:04 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 10:37:48 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 11:03:12 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes_bonus/cub_bonus.h"
 
-void	guns_asset(t_container *container, t_texturedata *gun)
+void	guns_asset(t_container *container, t_texturedata *gun) // Fix this
 {
 	gun->img =  mlx_xpm_file_to_image(container->mlx,"./images/guns.xpm",\
 	&gun->width, &gun->height);
