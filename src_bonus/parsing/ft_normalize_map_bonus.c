@@ -6,7 +6,7 @@
 /*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:13 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/23 15:55:02 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:02:58 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,7 @@ int	ft_normalize_map(t_parsing *data)
 	return (1);
 }
 
-t_door *ft_new_door(char i, int j, int c)
+int ft_verify_door(char **line, int i, int j)
 {
-	t_door *door;
-
-	door = malloc(sizeof(t_door));
-	door->door_status = i;
-	door->door_x = j;
-	door->door_y = c;
-	return door;
+    return ((line[i][j - 1] == '1' && line[i][j + 1] == '1') || (line[i + 1][j] == '1' && line[i - 1][j] == '1'));
 }

@@ -6,7 +6,7 @@
 /*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:08 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/23 15:56:08 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:13:56 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	ft_free_parsing(t_parsing *data)
 	free(data->south);
 	free(data->west);
 	free(data->east);
-	ft_lstclear(&data->door ,free);
 }

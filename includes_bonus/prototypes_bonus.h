@@ -6,7 +6,7 @@
 /*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:05 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 15:55:14 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:03:15 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char			*ft_strjoin(char *s1, char *s2);
 char			**ft_split_2(char *string);
 int				is_num(char *line);
 int 			is_door(char c);
-t_door 			*ft_new_door(char i, int j, int c);
+int				ft_verify_door(char **line, int i, int j);
 
 // ======================= EXECUTION ======================= //
 
