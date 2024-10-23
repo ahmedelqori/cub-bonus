@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:16:18 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:16:32 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 10:09:17 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@
 # define WX 0
 # define WY 1
 
+#define TARGET_FPS 60
+#define FRAME_TIME_MS (1000 / TARGET_FPS)
 
 # define NORTH_X 0.0f
 # define NORTH_Y -1.0f

@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:54 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 09:08:33 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:42:55 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ typedef struct s_wallproperties
 	double			texy;
 	t_texturedata	orientations[6];
 	t_texturedata	door;
+	t_texturedata	gun;
 }	t_wallproperties;
 
 typedef struct s_graphicsbundle
