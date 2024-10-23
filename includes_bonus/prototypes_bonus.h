@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:05 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 10:38:43 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:42:16 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,6 @@ void			camera_left_right(t_container *container, float flag);
 void			draw_mini_map(t_container *container);
 void			guns_asset(t_container *container, t_texturedata *gun);
 void			draw_gun_to_window(t_container *container, t_texturedata *gun);
+
+void	open_or_close_doors(t_container *container) ;// Fix this
 #endif

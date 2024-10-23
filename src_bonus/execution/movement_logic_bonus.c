@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:10:19 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 11:03:26 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:04:21 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void	right_left(t_container *container, char flag, float distance);
 
 void	handle_movement(t_container *container)
 {
-	const char	directions[7] = {UP, DOWN, LEFT, RIGHT,
-		CAMERA_LEFT, CAMERA_RIGHT, MOUSE};
+	const char	directions[9] = {UP, DOWN, LEFT, RIGHT,
+		CAMERA_LEFT, CAMERA_RIGHT, MOUSE, OPEN};
 	int			index;
 
 	index = -1;
-	while (++index < 7)
+	while (++index < 9)
 		if (container->mouvements[index])
 			move_every_direction(container, directions[index]);
 }
@@ -47,6 +47,8 @@ static void	move_every_direction(t_container *container, char flag)
 		container->mouse = !container->mouse;
 		container->mouvements[6] = FALSE;
 	}
+	if (flag == OPEN)
+		open_or_close_doors(container);
 }
 
 static void	forward_backward(t_container *container, char flag, float distance)

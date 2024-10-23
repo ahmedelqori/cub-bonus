@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:54 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 10:52:47 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:54:25 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ typedef struct s_container
 {
 	void				*mlx;
 	void				*win;
-	bool				mouvements[7];
+	bool				mouvements[8];
 	bool				mouse;
 	t_parsing			*data;
 	t_playerentity		player;

@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:13:40 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 10:53:40 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:59:43 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,32 @@ void	handle_events(t_container *container)
 
 static int	key_press(int key, t_container *container)
 {
-	7[(int *)(array_of_direction())] = -1;
+	8[(int *)(array_of_direction())] = -1;
 	if (key == ESC)
 		terminate_with_cleanup(key, container);
-	while (++7[(int *)(array_of_direction())] < 7)
+	while (++8[(int *)(array_of_direction())] < 8)
 		if (key == ((int *)(array_of_direction())) \
-			[7[(int *)(array_of_direction())]])
-			container->mouvements[7[(int *)(array_of_direction())]] = TRUE;
+			[8[(int *)(array_of_direction())]])
+			container->mouvements[8[(int *)(array_of_direction())]] = TRUE;
 	return (1);
 }
 
 static int	key_release(int key, t_container *container)
 {
-	7[(int *)(array_of_direction())] = -1;
+	8[(int *)(array_of_direction())] = -1;
 	if (key == ESC)
 		terminate_with_cleanup(key, container);
-	while (++7[(int *)(array_of_direction())] < 7)
-		if (key == ((int *)(array_of_direction())) \
-			[7[(int *)(array_of_direction())]])
-			container->mouvements[7[(int *)(array_of_direction())]] = FALSE;
+	while (++8[(int *)(array_of_direction())] < 8)
+		if (key != SPACE && key == ((int *)(array_of_direction())) \
+			[8[(int *)(array_of_direction())]])
+			container->mouvements[8[(int *)(array_of_direction())]] = FALSE;
 	return (1);
 }
 
 static int	*array_of_direction(void)
 {
-	static int	keys[8] = {KEY_W, KEY_S, KEY_A, KEY_D,
-		ARROW_LEFT, ARROW_RIGHT, CTRL, START};
+	static int	keys[9] = {KEY_W, KEY_S, KEY_A, KEY_D,
+		ARROW_LEFT, ARROW_RIGHT, CTRL, SPACE, START};
 
 	return (keys);
 }
