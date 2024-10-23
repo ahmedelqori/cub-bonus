@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:54 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 16:48:05 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:16:14 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ typedef struct s_container
 	bool				mouvements[8];
 	bool				mouse;
 	t_parsing			*data;
+	int					width;
+	int					height;
 	t_playerentity		player;
 	t_colorpalette		background;
 	t_graphicsbundle	bundles;

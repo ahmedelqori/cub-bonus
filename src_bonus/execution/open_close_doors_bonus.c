@@ -6,13 +6,12 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:23:30 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 13:00:24 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:20:45 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes_bonus/cub_bonus.h"
 
-static int	get_size_of_matrix(char **str);
 void	open_or_close_doors(t_container *container) // Fix this
 {
 	int mapx;
@@ -68,9 +67,8 @@ void	open_or_close_doors(t_container *container) // Fix this
 		}
 		if (mapx < 0 || mapy < 0 || \
 			mapy >= \
-				get_size_of_matrix(container->data->map) || \
-			mapx >= (int)ft_strlen(
-				container->data->map[mapy]))
+				container->height || \
+			mapx >= container->width)
 			break;
 		else if (container->data->map[mapy][mapx] == '1')
 			break;
@@ -89,12 +87,3 @@ void	open_or_close_doors(t_container *container) // Fix this
 	container->mouvements[7] = FALSE;
 }
 
-static int	get_size_of_matrix(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}

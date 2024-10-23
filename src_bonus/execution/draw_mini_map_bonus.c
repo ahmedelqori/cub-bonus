@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 22:51:58 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 14:53:07 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:19:22 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,7 @@ void draw_circle(t_texturedata *img, int center_x, int center_y, int radius, int
   }
 }
 
-static int	get_size_of_matrixa(char **str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 
 void draw_mini_map(t_container *container)
@@ -57,8 +49,8 @@ void draw_mini_map(t_container *container)
     int minimap_block_size = 15; 
     double player_x = container->player.pos.horz; 
     double player_y = container->player.pos.vert; 
-    int map_width = ft_strlen(container->data->map[0]); 
-    int map_height = get_size_of_matrixa(container->data->map); 
+    int map_width = container->width; 
+    int map_height = container->height; 
     int minimap_size = 5; 
     int player_radius = 3; 
     double player_minimap_x = minimap_size * minimap_block_size / 2;

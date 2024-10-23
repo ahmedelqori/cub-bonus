@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:39:31 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 14:37:09 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:35:17 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	update_render(t_container *container)
 {
 	long	frame_start_time;
 	
+
 	frame_start_time = get_time_in_ms(); 
 	draw_floor_ceil(container);
 	digital_differential_analysis(container);
