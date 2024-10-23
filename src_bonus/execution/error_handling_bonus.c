@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:54:51 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/22 21:49:20 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:13:30 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	terminate_with_cleanup(int key, t_container *container)
 	container->bundles.walls.orientations[2].img);
 	mlx_destroy_image(container->mlx, \
 	container->bundles.walls.orientations[3].img);
+	mlx_destroy_image(container->mlx, \
+			container->bundles.walls.door.img);
 	mlx_destroy_image(container->mlx, container->bundles.background.img);
 	mlx_destroy_window(container->mlx, container->win);
 	mlx_destroy_display(container->mlx);
@@ -54,6 +56,9 @@ int	mouse_hook(t_container *container)
 	if (container->bundles.walls.orientations[3].img)
 		mlx_destroy_image(container->mlx, \
 			container->bundles.walls.orientations[3].img);
+	if (container->bundles.walls.door.img)
+		mlx_destroy_image(container->mlx, \
+			container->bundles.walls.door.img);
 	mlx_destroy_image(container->mlx, container->bundles.background.img);
 	mlx_destroy_window(container->mlx, container->win);
 	mlx_destroy_display(container->mlx);

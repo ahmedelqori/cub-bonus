@@ -9,7 +9,7 @@ CC = cc
 NAME = cub3D
 NAME_BONUS = cub3D_bonus
 
-CFLAGS = -Wall -Wextra  -Werror #-fsanitize=address -g
+CFLAGS = -Wall -Wextra  -Werror -fsanitize=address -g
 
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
