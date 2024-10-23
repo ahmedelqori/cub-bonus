@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:16:18 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 12:58:18 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:24:58 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,10 @@
 # define ALLOC_CONTAINER "Failed Allocation of container"
 # define ERROR_MAP "Error\nEnter a valid number of argument\n"
 # define ERROR_TEXTURES "Error In Textures\n"
+
+# define DOOR_CLOSE "./images/door_close.xpm"
+# define DOOR_OPEN "./images/door_open.xpm"
+
 // =================PARSING=====================
 
 # ifndef MAX_LINE
