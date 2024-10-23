@@ -6,7 +6,7 @@
 /*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:13 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/23 17:02:58 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:20:12 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_normalize_map(t_parsing *data)
 
 int ft_verify_door(char **line, int i, int j)
 {
-    return ((line[i][j - 1] == '1' && line[i][j + 1] == '1') || (line[i + 1][j] == '1' && line[i - 1][j] == '1'));
+    return (((line[i][j - 1] == '1' || is_door(line[i][j - 1])) && (line[i][j + 1] == '1' || is_door(line[i][j + 1]))) || ((line[i + 1][j] == '1' || is_door(line[i + 1][j])) && (line[i][j - 1] == '1' || is_door(line[i - 1][j]))));
 }
