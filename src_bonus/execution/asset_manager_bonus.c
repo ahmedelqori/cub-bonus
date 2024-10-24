@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 18:07:00 by meedivo           #+#    #+#             */
-/*   Updated: 2024/10/24 11:14:42 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:15:25 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ static t_texturedata	*array_of_images(t_container *cub, int index)
 {
 	const t_texturedata	*array[6] = {&cub->bundles.walls.orientations[0], \
 	&cub->bundles.walls.orientations[1], &cub->bundles.walls.orientations[2], \
-	&cub->bundles.walls.orientations[3], &cub->bundles.walls.door[0], &cub->bundles.walls.door[1]};
+	&cub->bundles.walls.orientations[3], &cub->bundles.walls.door[0], \
+		&cub->bundles.walls.door[1]};
 
 	return ((t_texturedata *)array[index]);
 }

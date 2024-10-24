@@ -6,84 +6,108 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:23:30 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/24 11:48:54 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:14:28 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes_bonus/cub_bonus.h"
 
+static void	calc_delta(t_container *container, t_playerentity *player);
+static void	calc_sidedist(t_container *container, t_playerentity *player);
+static void	hit_ray_with_door(t_container *container, t_playerentity *player);
+static int	repalce_door_after_hit(t_container *container, \
+			t_playerentity *player);
+
 void	open_or_close_doors(t_container *container) // Fix this
 {
-	int mapx;
-	int mapy;
-	
-	double deltaX, deltaY;
-	double sideX, sideY;
-	int stepx = 0, stepy = 0;
+	t_playerentity	player;
 
-	
-	mapx = floor(container->player.pos.horz);
-	mapy = floor(container->player.pos.vert);
+	calc_delta(container, &player);
+	calc_sidedist(container, &player);
+	hit_ray_with_door(container, &player);
+}
+
+static void	calc_delta(t_container *container, t_playerentity *player)
+{
+	player->mapx = floor(container->player.pos.horz);
+	player->mapy = floor(container->player.pos.vert);
 	if (container->player.dir.horz == 0)
-		deltaX = MAXDOUBLE;
+		player->delta.horz = MAXDOUBLE;
 	else
-		deltaX = fabs(1 / container->player.dir.horz);
+		player->delta.horz = fabs(1 / container->player.dir.horz);
 	if (container->player.dir.vert == 0)
-		deltaY = MAXDOUBLE;
+		player->delta.vert = MAXDOUBLE;
 	else
-		deltaY = fabs(1 / container->player.dir.vert);
+		player->delta.vert = fabs(1 / container->player.dir.vert);
+}
+
+static void	calc_sidedist(t_container *container, t_playerentity *player)
+{
 	if (container->player.dir.horz < 0)
 	{
-		stepx = -1;
-		sideX = (container->player.pos.horz - mapx) * deltaX;
+		player->stepx = -1;
+		player->sidedist.horz = (container->player.pos.horz - \
+			player->mapx) * player->delta.horz;
 	}
 	else
 	{
-		stepx = 1;
-		sideX = (mapx + 1.0f - container->player.pos.horz) * deltaX;
+		player->stepx = 1;
+		player->sidedist.horz = (player->mapx + 1.0f - \
+			container->player.pos.horz) * player->delta.horz;
 	}
 	if (container->player.dir.vert < 0)
 	{
-		stepy = -1;
-		sideY = (container->player.pos.vert - mapy) * deltaY;
+		player->stepy = -1;
+		player->sidedist.vert = (container->player.pos.vert - \
+			player->mapy) * player->delta.vert;
 	}
 	else
 	{
-		stepy = 1;
-		sideY = (mapy + 1.0f - container->player.pos.vert)
-			* deltaY;
+		player->stepy = 1;
+		player->sidedist.vert = (player->mapy + 1.0f - \
+			container->player.pos.vert) * player->delta.vert;
 	}
+}
+
+static void	hit_ray_with_door(t_container *container, \
+	t_playerentity *player)
+{
 	while (1)
 	{
-		if (sideX < sideY)
+		if (player->sidedist.horz < player->sidedist.vert)
 		{
-			sideX += deltaX;
-			mapx += stepx;
+			player->sidedist.horz += player->delta.horz;
+			player->mapx += player->stepx ;
 		}
 		else
 		{
-			sideY += deltaY;
-			mapy += stepy;
+			player->sidedist.vert += player->delta.vert;
+			player->mapy += player->stepy;
 		}
-		if (mapx < 0 || mapy < 0 || \
-			mapy >= \
-				container->height || \
-			mapx >= container->width)
-			break;
-		else if (container->data->map[mapy][mapx] == '1')
-			break;
-		else if (container->data->map[mapy][mapx] == 'C')
-		{
-			container->data->map[mapy][mapx] = 'O';
-			break;
-		}
-		else if (container->data->map[mapy][mapx] == 'O')
-		{
-			container->data->map[mapy][mapx] = 'C';
-			break;
-		}
-		
+		if (repalce_door_after_hit(container, player))
+			break ;
 	}
 	container->mouvements[7] = FALSE;
 }
 
+static int	repalce_door_after_hit(t_container *container, \
+	t_playerentity *player)
+{
+	char	element;
+
+	if (player->mapx < 0 || player->mapy < 0 || \
+		player->mapy >= \
+			container->height || \
+		player->mapx >= container->width)
+		return (TRUE);
+	element = container->data->map[player->mapy][player->mapx];
+	if (element == '1')
+		;
+	else if (element == 'C')
+		container->data->map[player->mapy][player->mapx] = 'O';
+	else if (element == 'O')
+		container->data->map[player->mapy][player->mapx] = 'C';
+	else
+		return (FALSE);
+	return (TRUE);
+}

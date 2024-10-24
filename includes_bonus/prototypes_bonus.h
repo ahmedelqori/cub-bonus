@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_bonus.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:15:05 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 17:03:15 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/24 12:42:43 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ void			guns_asset(t_container *container, t_texturedata *gun);
 void			draw_gun_to_window(t_container *container, t_texturedata *gun);
 
 void	open_or_close_doors(t_container *container) ;// Fix this
+void paint_on_screen_by_pixel(t_texturedata *img, int x, int y, int color);
 #endif
