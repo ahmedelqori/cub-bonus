@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:17:34 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/24 20:05:44 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 20:15:46 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	handle_mouse(int x, int y, t_container *container)
 	static int	win[2] = {START, START};
 	int			center[2];
 	int			delta;
-
+	
 	if (change_status_mouse(container) == FAIL)
 		return (FAIL);
 	if (WX[win] == -1 && WY[win] == -1)

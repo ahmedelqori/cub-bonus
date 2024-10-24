@@ -3,8 +3,8 @@ SO ./images/s_bonus.xpm
 WE ./images/w_bonus.xpm
 EA ./images/e_bonus.xpm
 
-C 0,   0,  0
-F 0 , 0 , 0
+C 100,   150,  200
+F 64 , 42 , 15
 
         1111111111111111111111111
         1000000000110000000000001
