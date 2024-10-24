@@ -6,7 +6,7 @@
 /*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:13 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/23 18:07:17 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/24 20:31:41 by relhamma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int ft_verify_door(char **line, int i, int j)
 		if (((line[i + 1][j] == '0' || is_door(line[i + 1][j])) && (line[i - 1][j] == '0' || is_door(line[i - 1][j]))))
 			return (1);
 	}
-	else if (((line[i + 1][j] == '1' || is_door(line[i + 1][j])) && (line[i][j - 1] == '1' || is_door(line[i - 1][j]))))
+	else if (((line[i + 1][j] == '1' || is_door(line[i + 1][j])) && (line[i - 1][j] == '1' || is_door(line[i - 1][j]))))
 	{
 		if (((line[i][j + 1] == '0' || is_door(line[i][j + 1])) && (line[i][j - 1] == '0' || is_door(line[i][j - 1]))))
 			return (1);
