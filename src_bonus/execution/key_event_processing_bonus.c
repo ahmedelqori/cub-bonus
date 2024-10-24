@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 16:13:40 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 12:59:43 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:16:12 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	handle_events(t_container *container)
 	mlx_hook(container->win, 17, 0, mouse_hook, container);
 	mlx_hook(container->win, 2, 1L << 0, key_press, container);
 	mlx_hook(container->win, 3, 1L << 1, key_release, container);
-	mlx_hook(container->win, 6, 1L << 6, handle_mouse, container);
-	mlx_mouse_hide(container->mlx, container->win);
+	// mlx_hook(container->win, 6, 1L << 6, handle_mouse, container);
+	// mlx_mouse_hide(container->mlx, container->win);
 }
 
 static int	key_press(int key, t_container *container)

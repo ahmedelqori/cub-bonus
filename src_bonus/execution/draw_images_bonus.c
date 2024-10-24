@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 03:53:38 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 18:25:20 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:27:32 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	get_textures_x(t_container *container);
 int		img_px(t_texturedata img, int x, int y);
 void	draw_pixels_to_screen(t_container *container, int x, int y);
 void	paint_on_screen_by_pixel(t_texturedata *img, int x, int y, int color);
-void	draw_background_opt(t_container *container, int start, int end, int x ,int flag);
 
 void	draw_images_to_game(t_container *container, int x)
 {
@@ -72,6 +71,8 @@ void	paint_on_screen_by_pixel(t_texturedata *img, int x, int y, int color)
 {
 	char	*dst;
 
+	if (color == (int)0x00980088)
+		return ;
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
 }
@@ -82,16 +83,14 @@ void	draw_pixels_to_screen(t_container *container, int x, int y)
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
 			img_px(container->bundles.walls.door[0],
 				container->bundles.walls.texx, container->bundles.walls.texy));
-	else if (container->player.open == TRUE  && container->player.hit == 4 )
+	else if (container->player.hit == 4)
 	{
-		int px = img_px(container->bundles.walls.door[1],
+		const int px = img_px(container->bundles.walls.door[1],
 				container->bundles.walls.texx, container->bundles.walls.texy);
 		if (px != (int)0xFF000000)
-			paint_on_screen_by_pixel(&container->bundles.background, x, y,px);
+			paint_on_screen_by_pixel(&container->bundles.background, x, y, px);
 		else
-			paint_on_screen_by_pixel(&container->bundles.background, x, y,
-				img_px(container->bundles.walls.door[0],
-					container->bundles.walls.texx, container->bundles.walls.texy));
+			paint_on_screen_by_pixel(&container->bundles.background, x, y, 0x000000);
 	}
 	else if (container->player.side == 0 && container->player.ray.horz > 0)
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
@@ -109,6 +108,4 @@ void	draw_pixels_to_screen(t_container *container, int x, int y)
 		paint_on_screen_by_pixel(&container->bundles.background, x, y,
 			img_px(container->bundles.walls.orientations[1],
 				container->bundles.walls.texx, container->bundles.walls.texy));
-	if (x == SCREEN_WIDTH / 2 && y == SCREEN_HEIGHT / 2)
-		paint_on_screen_by_pixel(&container->bundles.background, x, y, 0xFFFFFF);
 }
