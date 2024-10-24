@@ -79,7 +79,7 @@ SRC_BONUS = ./src_bonus/main_bonus.c \
 LIB = ./includes/cub.h ./includes/includes.h ./includes/macros.h ./includes/prototypes.h \
 	./includes/structures.h
 
-LIB_bonus = ./includes_bonus/cub_bonus.h ./includes_bonus/includes_bonus.h ./includes_bonus/macros_bonus.h ./includes_bonus/prototypes_bonus.h \
+LIB_BONUS = ./includes_bonus/cub_bonus.h ./includes_bonus/includes_bonus.h ./includes_bonus/macros_bonus.h ./includes_bonus/prototypes_bonus.h \
 	./includes_bonus/structures_bonus.h
 
 
@@ -109,7 +109,7 @@ $(MLX):
 bonus: $(MLX) $(LIBFT) $(NAME_BONUS)
 	@echo -n;
 
-$(NAME_BONUS): $(OBJ_BONUS) $(LIB_bonus)
+$(NAME_BONUS): $(OBJ_BONUS) $(LIB_BONUS)
 	@$(CC) $(CFLAGS) $(OBJ_BONUS) -Lminilibx -lmlx -lXext -lX11 -lm  $(LIBFT) $(MLX) -o $(NAME_BONUS)
 	@echo "$(GREEN)\t\t✓ $(NAME_BONUS)$(RESET)"
 	@echo "$(MAGENTA)Usage:\n\t$(YELLOW)./cub3D_bonus map.cub$(RESET)"
