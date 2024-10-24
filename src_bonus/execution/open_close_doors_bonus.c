@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:23:30 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/24 13:14:28 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 13:50:24 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	hit_ray_with_door(t_container *container, t_playerentity *player);
 static int	repalce_door_after_hit(t_container *container, \
 			t_playerentity *player);
 
-void	open_or_close_doors(t_container *container) // Fix this
+void	open_or_close_doors(t_container *container)
 {
 	t_playerentity	player;
 
