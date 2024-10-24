@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:14:16 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/23 12:03:45 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:05:29 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 # include <fcntl.h>
 # include <math.h>
 # include <time.h>
+# include <pthread.h>
 
 #endif

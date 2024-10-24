@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:16:18 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/24 13:40:21 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:17:58 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@
 
 # define MOVE_SPEED 0.02f
 # define ROTATION_SPEED 0.01f
-# define MOUSE_SENSITIVITY 0.1f
+# define MOUSE_SENSITIVITY 0.01f
 
 # define DISTANCE_IN_FORWARD -0.22f
 # define DISTANCE_IN_BACKWARD 0.8f

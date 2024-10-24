@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:10:19 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/24 14:04:02 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:19:27 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ static void	move_every_direction(t_container *container, char flag)
 		camera_left_right(container, (float)TRUE);
 	if (flag == OPEN)
 		open_or_close_doors(container);
+	if (flag == MOUSE)
+	{
+		container->mouse = !container->mouse;
+		container->mouvements[6] = FALSE;
+	}
 }
 
 static void	forward_backward(t_container *container, char flag, float distance)
