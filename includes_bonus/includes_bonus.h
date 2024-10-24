@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 14:14:16 by ael-qori          #+#    #+#             */
-/*   Updated: 2024/10/24 15:05:29 by ael-qori         ###   ########.fr       */
+/*   Updated: 2024/10/24 19:56:43 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 # include <math.h>
 # include <time.h>
 # include <pthread.h>
+# include <sys/wait.h>
 
 #endif
