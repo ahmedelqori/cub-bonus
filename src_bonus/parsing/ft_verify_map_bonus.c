@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_verify_map_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: relhamma <relhamma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:01:28 by relhamma          #+#    #+#             */
-/*   Updated: 2024/10/23 18:06:01 by relhamma         ###   ########.fr       */
+/*   Updated: 2024/10/24 21:17:38 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,5 @@ int	ft_verify_map(t_parsing *data)
 	}
 	if (helper.player_found != 1)
 		return (0);
-	for (int i = 0;data->map[i]; i++)
-		printf("$%s$\n", data->map[i]);
 	return (1);
 }
